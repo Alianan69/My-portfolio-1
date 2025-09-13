@@ -1,0 +1,44 @@
+/* 08. process */
+.process{
+    &__area{
+        @media #{$xs}{
+            padding-top: 70px;
+            padding-bottom: 25px;
+        }
+    }
+    &__item{
+        padding: 0 5px;
+        & span{
+            font-size: 120px;
+            font-family: $oswald;
+            letter-spacing: 1px;
+            color: transparent;
+            -webkit-text-stroke: 2px $red;
+            @media #{$lg,$md}{
+                font-size: 90px;
+            }
+            @media #{$xs}{
+                font-size: 60px;
+            }
+        }
+        & h4{
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            @media #{$lg,$xs}{
+                font-size: 20px;
+            }
+        }
+        & p{
+            font-size: 16px;
+        }
+        &.white{
+            & h4{
+                color: $white;
+            }
+            & p{
+                color: #d0d0d0;
+            }
+        }
+    }
+}

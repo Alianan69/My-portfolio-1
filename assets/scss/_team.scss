@@ -1,0 +1,218 @@
+/* 10. team */
+.team{
+    &__area{
+        @media #{$xs}{
+            padding-top: 70px;
+            padding-bottom: 60px;
+        }
+    }
+    &__member{
+        &:hover{
+            & .team__member-img img{
+                transform: scale(1.1);
+            }
+        }
+        &-img{
+            overflow: hidden;
+            & img{
+                width: 100%;
+            }
+        }
+        &-content{
+            padding: 35px 40px;
+            background: $white;
+            @include transition(.3s);
+            @media #{$lg}{
+                padding: 30px 30px;
+            }
+            & h4{
+                font-size: 24px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                &:hover{
+                    color: $red;
+                }
+            }
+            & span{
+                font-size: 16px;
+                font-weight: 700;
+                color: $red;
+                margin-bottom: 15px;
+                display: block;
+            }
+            & p{
+                margin-bottom: 0;
+            }
+        }
+        &.slick-current{
+            & .team__member-content{
+                background: $red;
+                @include transition(.3s);
+                & h4,& span,& p{
+                    color: $white;
+                }
+            }
+        }
+    }
+    &__active{
+        & .slick-dots {
+            position: absolute;
+            bottom: -21px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            @media #{$xs}{
+                display: none;
+            }
+            & li {
+                display: inline-block;
+                margin-right: 10px;
+                & button {
+                    text-indent: -5555px;
+                    height: 4px;
+                    width: 20px;
+                    border: 0;
+                    background: #b4c7d6;
+                }
+            }
+            & .slick-active{
+                & button{
+                    width: 30px;
+                    background: $red;
+                }
+            }
+        }
+    }
+}
+// team details 
+.team{
+    &__details{
+        @media #{$xs}{
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        &-inner {
+            box-shadow: 0px 50px 80px 0px rgba(3, 0, 53, 0.1);
+            @include border-radius(30px);
+        }
+        &-img{
+            @media #{$md,$xs}{
+                margin-right: 0;
+            }
+            & img {
+                @include border-radius(30px 0 0 30px);
+                width: 100%;
+                @media #{$xs,$md}{
+                    border-radius: 30px;
+                }
+            }
+        }
+        &-content{
+            @media #{$lg}{
+                padding-top: 35px;
+            }
+            @media #{$md}{
+                padding: 40px;
+            }
+            @media #{$xs}{
+                padding: 25px;
+            }
+            & > span {
+                font-size: 20px;
+                display: inline-block;
+                margin-bottom: 7px;
+            }
+            & h3 {
+                font-size: 30px;
+                margin-bottom: 15px;
+                @media #{$xs}{
+                    font-size: 24px;
+                }
+            }
+            & p {
+                margin-bottom: 35px;
+                padding-right: 80px;
+                @media #{$xs}{
+                    padding-right: 0;
+                }
+            }
+        }
+        &-contact{
+            & ul{
+                & li {
+                    margin-bottom: 8px;
+                    display: flex;
+                    & .icon {
+                        & i {
+                            line-height: 27px;
+                            color: $theme-color;
+                            margin-right: 15px;
+                        }
+                    }
+                    & .text{
+                        & span {
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+        &-social{
+            & ul{
+                & li {
+                    display: inline-block;
+                    margin-right: 7px;
+                    & a {
+                        position: relative;
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        background: #f1f1f1;
+                        font-size: 14px;
+                        @include border-radius(10px);
+                        &:hover{
+                            background: $theme-color;
+                            color: #ffffff;
+                            & i:first-child {
+                                left: -120%;
+                            }
+                            & i:last-child {
+                                left: 50%;
+                            }
+                        }
+                        & i {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            @include transition(.2s);
+                            &:last-child {
+                                left: 120%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-info{
+            & h4 {
+                font-size: 40px;
+                font-weight: 700;
+                margin-bottom: 25px;
+                @media #{$xs}{
+                    font-size: 28px;
+                }
+            }
+            & p {
+                margin-bottom: 25px;
+            }
+            & .red-btn:hover {
+                color: #ffffff;
+                background: #07395c;
+                border-color: #07395c;
+            }
+        }
+    }
+}

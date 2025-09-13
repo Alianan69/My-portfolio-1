@@ -1,0 +1,113 @@
+/* 18. footer */
+.go-top {
+	display: inline-block;
+	margin-top: 30px;
+	@media #{$xs} {
+		margin-top: 20px;
+	}
+	& a {
+		font-size: 24px;
+		height: 70px;
+		width: 70px;
+		text-align: center;
+		line-height: 70px;
+		display: block;
+		color: #002641;
+		background: $white;
+		@media #{$xs} {
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+		}
+		&:hover {
+			background: $theme-color;
+			color: $white;
+		}
+		& i {
+			font-weight: 300;
+		}
+	}
+}
+.footer {
+	&__top {
+		@media #{$md,$xs} {
+			padding: 0 0;
+		}
+	}
+	&__bottom {
+		@media #{$xs} {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+	}
+	&__text {
+		@media #{$md,$xs} {
+			text-align: center;
+		}
+		& h3 {
+			font-size: 40px;
+			text-transform: uppercase;
+			color: $white;
+			margin-bottom: 0;
+			@media #{$lg,$md} {
+				font-size: 36px;
+			}
+			@media #{$xs} {
+				font-size: 21px;
+			}
+		}
+	}
+	&__social {
+		margin-top: 18px;
+		@media #{$md,$xs} {
+			float: none;
+			text-align: center;
+		}
+		@media #{$xs} {
+			margin-top: 0;
+		}
+		& li {
+			display: inline-block;
+			margin-left: 5px;
+			@media #{$lg,$md,$xs} {
+				margin-left: 3px;
+			}
+			& a {
+				height: 60px;
+				width: 60px;
+				font-size: 16px;
+				color: $white;
+				text-align: center;
+				border: 2px solid #063658;
+				line-height: 56px;
+				border-radius: 50%;
+				display: inline-block;
+				@media #{$lg,$md,$xs} {
+					height: 50px;
+					width: 50px;
+					line-height: 46px;
+				}
+				&:hover {
+					background: $red;
+					border-color: $red;
+				}
+			}
+		}
+		&.dark {
+			& li {
+				& a {
+					border-color: #353535;
+					&:hover {
+						border-color: $red;
+					}
+				}
+			}
+		}
+	}
+}
+.footer-bg {
+	background: #002641;
+}
+.footer-bg-2 {
+	background: $dark;
+}

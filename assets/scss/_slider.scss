@@ -1,0 +1,168 @@
+/* 04. slider */
+.slider{
+    &__area{
+        padding: 400px 0 300px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        @media #{$md}{
+            padding: 300px 0 200px;
+        }
+        @media #{$xs}{
+            padding: 200px 0 100px;
+        }
+    }
+    &__content{
+        position: relative;
+        z-index: 3;
+        & h2{
+            font-size: 80px;
+            color: $white;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            line-height: 1.12;
+            @media #{$md}{
+                font-size: 70px;
+            }
+            @media #{$xs}{
+                font-size: 35px;
+                margin-bottom: 20px;
+            }
+            & span{
+                color: transparent;
+                -webkit-text-stroke: 2px $white;
+            }
+        }
+    }
+    &__envelope{
+        font-size: 16px;
+        color: $white;
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+        background: $heading-color;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        top: -2px;
+        @media #{$xs}{
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+        }
+        &::before{
+            position: absolute;
+            content: '';
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            background: #bb2228;
+            bottom: -7px;
+            height: 60px;
+            width: 60px;
+            right: -7px;
+            z-index: -1;
+            @media #{$xs}{
+                height: 50px;
+                width: 50px;
+                right: -5px;
+            }
+        }
+        &-red{
+            background: $red;
+            @extend .slider__envelope;
+            &:before{
+                background: #272727;
+            }
+        }
+        &:hover{
+            background: $white;
+            color: $red;
+        }
+    }
+    &__social{
+        position: absolute;
+        bottom: 70px;
+        left: 70px;
+        z-index: 4;
+        @media #{$md}{
+            bottom: 40px;
+        }
+        @media #{$xs}{
+            display: none;
+        }
+        & ul{
+            & li{
+                margin-bottom: 10px;
+                & a{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $white;
+                    text-transform: uppercase;
+                    font-family: $oswald;
+                    &:hover{
+                        color:$heading-color;
+                    }
+                }
+            }
+        }
+        &.dark{
+            & ul li a{
+                &:hover{
+                    color: $red;
+                }
+            }
+        }
+    }
+    &__shape{
+        position: absolute;
+        bottom: 0;
+        right:110px;
+        z-index: 3;
+        @media #{$laptop}{
+            right: 30px;
+        }
+        @media #{$lg,$md}{
+            right: 0;
+        }
+        @media #{$md}{
+            transform: scale(.7);
+            transform-origin: bottom right;
+        }
+        @media #{$xs}{
+            display: none;
+        }
+    }
+    &__back-text{
+        position: absolute;
+        transform: rotate(-15deg);
+        top: 146px;
+        left: -140px;
+        z-index: 1;
+        @media #{$laptop,$lg,$md}{
+            top: 360px;
+        }
+        @media #{$xs}{
+            display: none;
+        }
+        & span{
+            font-size: 600px;
+            font-family: $oswald;
+            color: transparent;
+            text-transform: uppercase;
+            -webkit-text-stroke: 2px rgba(255,255,255,0.2);
+            line-height: 1;
+            letter-spacing: -25px;
+            &.st-2{
+                -webkit-text-stroke: 2px rgba(255,255,255,0.1);  
+            }
+            @media #{$laptop,$lg}{
+                font-size: 450px;
+            }
+            @media #{$md}{
+                font-size: 300px;
+            }
+        }
+    }
+}
+
+
+

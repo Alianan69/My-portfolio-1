@@ -1,0 +1,256 @@
+/* 03. header  */
+.transparent-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+}
+.logo {
+	& a {
+		font-size: 50px;
+		color: $white;
+		font-weight: 600;
+		font-family: $oswald;
+		text-transform: uppercase;
+		line-height: 130px;
+		@media #{$xs} {
+			font-size: 40px;
+			line-height: 90px;
+		}
+	}
+}
+.main-menu {
+	& ul {
+		& li {
+			display: inline-block;
+			margin: 0 23px;
+			position: relative;
+			@media #{$lg} {
+				margin: 0 12px;
+			}
+			&:hover {
+				& .submenu {
+					opacity: 1;
+					visibility: visible;
+					top: 100%;
+					border-top: 4px solid $red;
+				}
+			}
+			& a {
+				font-size: 18px;
+				color: $white;
+				text-transform: uppercase;
+				font-weight: 600;
+				font-family: $oswald;
+				padding: 40px 0;
+				display: block;
+				&:hover {
+					color: $red;
+				}
+			}
+			& .submenu {
+				position: absolute;
+				top: 120%;
+				left: 0;
+				width: 240px;
+				padding: 20px 0;
+				background: $white;
+				text-align: left;
+				opacity: 0;
+				visibility: hidden;
+				box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
+				@include transition(0.3s);
+				& li {
+					display: block;
+					margin: 0;
+					& a {
+						color: $heading-color;
+						font-size: 16px;
+						padding: 7px 20px;
+						&:hover {
+							color: $red;
+						}
+					}
+				}
+			}
+		}
+	}
+	& ul > li:hover a {
+		color: $red;
+	}
+	&.red {
+		& ul > li:hover a {
+			color: $theme-color;
+		}
+	}
+}
+.header {
+	&__icon {
+		& li {
+			display: inline-block;
+			margin-left: 35px;
+			@media #{$xs} {
+				margin-left: 25px;
+			}
+			& a {
+				display: inline-block;
+			}
+			& i {
+				font-size: 30px;
+				color: $white;
+				font-weight: 300;
+				@media #{$xs} {
+					font-size: 26px;
+				}
+			}
+		}
+	}
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	background: $theme-color;
+	z-index: 1030;
+	right: 0;
+	left: 0;
+	width: 100%;
+	transition: 0.4s;
+	box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.5);
+	animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+.sticky .logo a {
+	line-height: 100px;
+	@media #{$xs,$md} {
+		line-height: 80px;
+	}
+}
+.sticky {
+	& .main-menu {
+		& ul > li:hover > a {
+			color: $red;
+		}
+		& ul li.active > a {
+			color: $red;
+		}
+	}
+}
+
+/* mean menu */
+.side-toggle {
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+.side-info.info-open {
+	right: 0;
+}
+
+.side-info {
+	background: $theme-color;
+	width: 320px;
+	height: 100%;
+	position: fixed;
+	z-index: 55;
+	right: -100%;
+	top: 0;
+	padding: 30px;
+	transition: 0.6s;
+	overflow-y: scroll;
+}
+
+.offcanvas-overlay {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	z-index: 50;
+	top: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.offcanvas-overlay.overlay-open {
+	opacity: 0.6;
+	visibility: visible;
+}
+
+.side-menu-icon.d-lg-none.f-right {
+	margin: 20px 0;
+}
+
+.mean-container .mean-nav > ul {
+	display: block !important;
+}
+
+.mean-container a.meanmenu-reveal {
+	display: none !important;
+}
+
+.mean-container .mean-nav ul li a {
+	width: 100%;
+	padding: 10px 0;
+	color: #fff;
+	border-top: 1px solid #25344e;
+	font-size: 16px;
+}
+
+.mean-container .mean-nav {
+	background: none;
+	margin-bottom: 40px;
+}
+.mean-container .mean-nav ul li a.mean-expand {
+	height: 34px;
+	border: none;
+}
+
+.side-info-close {
+	background: none;
+	border: 0;
+	color: #fff;
+	font-size: 20px;
+	padding: 0;
+	margin-bottom: 20px;
+}
+
+.contact__list {
+	& h4 {
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	& p {
+		color: #d0d0d0;
+		margin-bottom: 3px;
+	}
+}
+.side-portfolio a {
+	width: 33.33%;
+	float: left;
+	padding: 0 3px;
+	margin-bottom: 6px;
+	display: block;
+	position: relative;
+	&:before {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: $theme-color;
+		opacity: 0;
+		visibility: hidden;
+	}
+	&:hover {
+		&:before {
+			opacity: 0.7;
+			visibility: visible;
+		}
+	}
+}
+.side-portfolio img {
+	width: 100%;
+}

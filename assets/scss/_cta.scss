@@ -1,0 +1,57 @@
+/* 11. cta */
+.cta{
+    &__area {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        @media #{$xs}{
+            padding-top: 130px;
+            padding-bottom: 115px;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(60deg, $theme-color 0%, $black 100%);
+            opacity: 0.8;
+        }
+    }
+    &__content{
+        & span {
+            font-family: $oswald;
+            font-size: 20px;
+            color: $white;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        & h1 {
+            font-size: 70px;
+            color: #ffffff;
+            font-weight: 900;
+            margin-bottom: 50px;
+            @media #{$md}{
+                font-size: 55px;
+            }
+            @media #{$xs}{
+                font-size: 28px;
+            }
+        }
+    }
+    &__btn{
+        & a{
+            &:first-child {
+                margin-right: 30px;
+                @media #{$xs}{
+                    margin-right: 0;
+                }
+                @media #{$sm}{
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,137 @@
+/* 14. contact */
+.contact {
+	&__area {
+		@media #{$xs,$md,$lg,$laptop} {
+			padding-bottom: 0;
+		}
+	}
+	&__inner {
+		max-width: 1400px;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	&__form {
+		@media #{$xs} {
+			padding-bottom: 40px;
+		}
+		& input,
+		select {
+			height: 58px;
+			border: none;
+			border-bottom: 2px solid $heading-color;
+			padding-left: 50px;
+			font-size: 16px;
+			color: $heading-color;
+			margin-bottom: 20px;
+			width: 100%;
+			-webkit-appearance: none;
+			-moz-appearance: textfield;
+			@media #{$xs} {
+				height: 40px;
+			}
+			&:focus {
+				border-color: $red;
+			}
+			&::-moz-placeholder {
+				color: #adc7da;
+				font-size: 16px;
+				opacity: 1;
+				text-transform: uppercase;
+				font-weight: 500;
+				font-family: $oswald;
+			}
+			&::placeholder {
+				color: #adc7da;
+				font-size: 16px;
+				opacity: 1;
+				text-transform: uppercase;
+				font-weight: 500;
+				font-family: $oswald;
+			}
+		}
+		& select {
+			color: #adc7da;
+			font-size: 16px;
+			opacity: 1;
+			text-transform: uppercase;
+			font-weight: 500;
+			font-family: $oswald;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			padding-left: 46px;
+		}
+		& textarea {
+			height: 148px;
+			border: none;
+			border-bottom: 2px solid $heading-color;
+			padding-left: 50px;
+			font-size: 16px;
+			color: $heading-color;
+			margin-bottom: 40px;
+			width: 100%;
+			padding-top: 16px;
+			resize: none;
+			@media #{$xs} {
+				padding-top: 7px;
+			}
+			&:focus {
+				border-color: $red;
+			}
+			&::-moz-placeholder {
+				color: #adc7da;
+				font-size: 16px;
+				opacity: 1;
+				text-transform: uppercase;
+				font-weight: 500;
+				font-family: $oswald;
+			}
+			&::placeholder {
+				color: #adc7da;
+				font-size: 16px;
+				opacity: 1;
+				text-transform: uppercase;
+				font-weight: 500;
+				font-family: $oswald;
+			}
+		}
+		&.dark {
+			& input {
+				border-color: $dark;
+				&:focus {
+					border-color: $red;
+				}
+			}
+			& textarea {
+				border-color: $dark;
+				&:focus {
+					border-color: $red;
+				}
+			}
+		}
+	}
+	&__btn {
+		width: 100%;
+		text-align: center;
+		& .red-btn {
+			&:hover {
+				color: $white;
+				background: $heading-color;
+				border-color: $heading-color;
+			}
+		}
+	}
+}
+.input-field {
+	position: relative;
+	& i {
+		position: absolute;
+		color: $red;
+		left: 15px;
+		top: 20px;
+		@media #{$xs} {
+			top: 11px;
+		}
+	}
+}

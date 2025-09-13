@@ -1,0 +1,33 @@
+/* 12. video */
+.video{
+    &__area{
+        padding: 333px 0 333px;
+        @media #{$md}{
+            padding: 200px 0 200px;
+        }
+        @media #{$xs}{
+            padding: 100px 0 100px;
+        }
+    }
+    &__link{
+        display: inline-block;
+        cursor: pointer;
+        &:hover{
+            & span{
+                color: $red;
+            }
+        }
+        & span {
+            font-size: 24px;
+            font-weight: 600;
+            color: $heading-color;
+            text-transform: uppercase;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            cursor: pointer;
+            transform: translate(-50%,-50%);
+            @include transition(.3s);
+        }
+    }
+}
